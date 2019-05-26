@@ -175,6 +175,6 @@ func SimpleServer(h http.Handler, pw string) http.Handler {
 		t := time.Now()
 		log.Printf("[%s]: %s\n", r.RemoteAddr, r.URL)
 		h.ServeHTTP(w, r)
-		log.Println("Finished - ", r.URL, time.Since(t))
+		log.Printf("[%s]: %s - %v\n", r.RemoteAddr, r.URL, time.Since(t))
 	})
 }
